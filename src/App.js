@@ -1,10 +1,22 @@
-import './App.css';
+import Header from './Components/Header/Header';
+import Home from './Components/Home/Home/Home';
+import Footer from './Components/Footer/Footer';
 import InitializationAuthentication from './Firebase/firebase.init';
+import {BrowserRouter as Router, Routes} from 'react-router-dom';
+// import Scroll from './Components/Scroll/Scroll';
+import { ScrollToTop } from './Components/ScrollToTop/ScrollToTop';
 InitializationAuthentication();
 function App() {
+  document.title="Nastamiz Interior";
   return (
-    <div className="App">
-      <h1>Welcome to our Nastamiz Interior House design Architecture!!!!!</h1>
+    <div>
+      <Router>
+        {/* <Scroll/> */}
+       <Header/>
+       <Home/>
+       <Footer/>
+       </Router>
+       <ScrollToTop/>
     </div>
   );
 }
